@@ -117,6 +117,19 @@
                 </androidx.coordinatorlayout.widget.CoordinatorLayout>
             </androidx.cardview.widget.CardView>
 
+            <androidx.appcompat.widget.AppCompatTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/_4sdp"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:background="@drawable/bg_info_rounded_default"
+                android:paddingLeft="@dimen/_4sdp"
+                android:paddingRight="@dimen/_4sdp"
+                android:text="هروقت عکس رو ببینه حذف میشه"
+                android:textColor="@color/colorText"
+                android:textSize="@dimen/_8ssp" />
+
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

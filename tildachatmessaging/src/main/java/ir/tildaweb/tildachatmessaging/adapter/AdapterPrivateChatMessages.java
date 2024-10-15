@@ -11,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.database.Cursor;
 import android.graphics.Typeface;
 import android.os.Build;
+import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.VibrationEffect;
@@ -591,7 +592,7 @@ public class AdapterPrivateChatMessages extends RecyclerView.Adapter<RecyclerVie
             if (chatMessage.getSeenCount() == 0) {
                 Log.d(TAG, "onViewAttachedToWindow: " + chatMessage.getSeenCount());
                 iChatUtils.onMessageSeen(chatMessage.getId());
-            }else{
+            } else {
                 Log.d(TAG, "onViewAttachedToWindow: " + chatMessage.getSeenCount());
             }
         }
@@ -2190,12 +2191,14 @@ public class AdapterPrivateChatMessages extends RecyclerView.Adapter<RecyclerVie
                 holder.binding.tvTime.setText(getTime(dateObject));
                 holder.binding.blurView.setupWith(holder.binding.getRoot(), new RenderScriptBlur(context))
                         .setBlurRadius(15f);
+
+
                 Glide.with(context).load(FILE_URL + chatMessage.getMessage()).into(holder.binding.imageView);
                 holder.binding.imageView.setOnClickListener(view -> {
                     iChatUtils.onDelete(chatMessage);
                     new DialogShowPicture(activity, FILE_URL, chatMessage.getMessage()).show();
                 });
-                holder.itemView.setOnClickListener(view -> showPopupMenu(holder.binding.tvTime, chatMessage, true, false, false, false));
+                holder.itemView.setOnClickListener(view -> showPopupMenu(holder.binding.tvTime, chatMessage, false, false, false, false));
                 break;
             }
 
@@ -2216,6 +2219,27 @@ public class AdapterPrivateChatMessages extends RecyclerView.Adapter<RecyclerVie
                 holder.binding.blurView.setupWith(holder.binding.getRoot(), new RenderScriptBlur(context))
                         .setBlurRadius(15f);
                 Glide.with(context).load(FILE_URL + chatMessage.getMessage()).into(holder.binding.imageView);
+
+//                new CountDownTimer(2000, 200) {
+//
+//                    @Override
+//                    public void onTick(long millisUntilFinished) {
+//                        if (holder.binding.blurView.getVisibility() == View.VISIBLE) {
+//                            holder.binding.blurView.setupWith(holder.binding.getRoot(), new RenderScriptBlur(context))
+//                                    .setBlurRadius(5f);
+//                        } else {
+//                            holder.binding.blurView.setVisibility(View.VISIBLE);
+//                            holder.binding.blurView.setupWith(holder.binding.getRoot(), new RenderScriptBlur(context))
+//                                    .setBlurRadius(15f);
+//                        }
+//                    }
+//
+//                    @Override
+//                    public void onFinish() {
+//                        holder.binding.blurView.setVisibility(View.VISIBLE);
+//                    }
+//                }.start();
+
                 holder.binding.imageView.setOnClickListener(view -> new DialogShowPicture(activity, FILE_URL, chatMessage.getMessage()).show());
 
                 holder.itemView.setOnClickListener(view -> showPopupMenu(holder.binding.tvTime, chatMessage, true, false, false, false));
@@ -2233,7 +2257,7 @@ public class AdapterPrivateChatMessages extends RecyclerView.Adapter<RecyclerVie
                         .setBlurRadius(15f);
                 Glide.with(context).load(FILE_URL + chatMessage.getMessage()).into(holder.binding.imageView);
                 holder.binding.imageView.setOnClickListener(view -> iChatUtils.onShowPurchasableSecurePicture(chatMessage));
-                holder.itemView.setOnClickListener(view -> showPopupMenu(holder.binding.tvTime, chatMessage, true, false, false, false));
+                holder.itemView.setOnClickListener(view -> showPopupMenu(holder.binding.tvTime, chatMessage, false, false, false, false));
                 break;
             }
         }
