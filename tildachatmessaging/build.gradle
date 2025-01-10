@@ -89,7 +89,7 @@ dependencies {
     //TextviewLink
     implementation 'me.saket:better-link-movement-method:2.2.0'
     //Blur
-    implementation 'com.github.Dimezis:BlurView:version-2.0.3'
+    implementation 'com.github.Dimezis:BlurView:version-2.0.6'
     //Voice recorder
     implementation 'com.github.shaoshuai904:RecordWav:1.2.2'
 
