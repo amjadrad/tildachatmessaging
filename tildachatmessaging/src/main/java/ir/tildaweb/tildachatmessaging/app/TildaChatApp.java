@@ -3,8 +3,8 @@ package ir.tildaweb.tildachatmessaging.app;
 import android.content.Context;
 import android.util.Log;
 
-import com.aghajari.emojiview.AXEmojiManager;
-import com.aghajari.emojiview.appleprovider.AXAppleEmojiProvider;
+//import com.aghajari.emojiview.AXEmojiManager;
+//import com.aghajari.emojiview.appleprovider.AXAppleEmojiProvider;
 
 import java.net.URISyntaxException;
 
@@ -25,7 +25,7 @@ public class TildaChatApp {
     public static boolean _isTime48 = false;
 
     public static void setUpEmojis(Context context) {
-        AXEmojiManager.install(context, new AXAppleEmojiProvider(context));
+//        AXEmojiManager.install(context, new AXAppleEmojiProvider(context));
     }
 
     public static void setUp(String chatUrl, String query, Integer userId, boolean reset) {

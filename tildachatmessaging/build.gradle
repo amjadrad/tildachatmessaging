@@ -77,8 +77,8 @@ dependencies {
     //Tilda file picker
     implementation 'com.github.amjadrad:TildaFilePicker:1.8'
     //Emoji
-    implementation "io.github.aghajari:AXEmojiView:1.5.2"
-    implementation "io.github.aghajari:AXEmojiView-AppleProvider:1.5.2"
+//    implementation "io.github.aghajari:AXEmojiView:1.5.2"
+//    implementation "io.github.aghajari:AXEmojiView-AppleProvider:1.5.2"
     //ExoPlayer
     implementation "androidx.media3:media3-exoplayer:1.4.1"
     implementation "androidx.media3:media3-ui:1.4.1"
